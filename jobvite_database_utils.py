@@ -9,7 +9,7 @@ server = os.getenv("SQL_SERVER")
 database = os.getenv("SQL_DATABASE")
 trusted = os.getenv("SQL_TRUSTED", "Yes") # Defaults to "Yes"
 
-conn_str = (
+conn = (
     f"Driver={{SQL Server}};"
     f"Server={server};"
     f"Database={database};"
@@ -129,4 +129,5 @@ def complete_matching(candidates, employees):
         matched_candidates.append((candidate["email"], emp_number))
 
     print("Final Matched Candidates:", matched_candidates)
+
     return matched_candidates
